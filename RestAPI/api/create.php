@@ -1,0 +1,60 @@
+<?php 
+
+	//include headers
+	//it allow all origins like localhost, any domain or any subdomain
+	header('Access-Control-Allow-Origin: *');
+	//data which we are getting inside request
+	header('Content-Type: application/json');
+	//method type
+	header('Access-Control-Allow-Methods: POST');
+	//it allow header
+	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
+	
+	//initializing our API
+	include_once('../core/initialize.php');
+
+	//instantiate product
+	$product = new Product($db);
+
+	if ($_SERVER['REQUEST_METHOD'] === "POST") {
+		
+		//get raw data
+		$data = json_decode(file_get_contents("php://input"));
+
+		$product->id 			= $data->id;
+		$product->warehouse_id 	= $data->warehouse_id;
+		$product->name 			= $data->name;
+		$product->photo 		= $data->photo;
+		$product->stock_balance = $data->stock_balance;
+		$product->price 		= $data->price;
+		$product->description 	= $data->description;
+
+		//create product
+		if($product->create_data()){
+
+			http_response_code(200); // OK status
+			echo json_encode(array(
+				"status"  => 1,
+				"message" => "Successfully Created"
+			));
+
+		}
+		else{
+			http_response_code(500); // Intenal server error
+			echo json_encode(array(
+				"status"  => 0,
+				"message" => "Product cannot create"
+			));
+		}
+		
+	}
+	else{
+		http_response_code(503); //service unavailable
+		echo json_encode(array(
+			"status"  => 0,
+			"message" => "Access Denied"
+		));
+	}
+
+
+ ?>
