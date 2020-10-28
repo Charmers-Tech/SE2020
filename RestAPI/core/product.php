@@ -8,7 +8,7 @@ include_once "function.php";
  	
  	//db stuff
  	private $conn;
- 	private $table= 'products';
+ 	private $table;
 
  	//product properties
  	public $id;
@@ -23,6 +23,7 @@ include_once "function.php";
  	//constructor with db connection
  	public function __construct($db){
  		$this->conn = $db;
+ 		$this->table= 'products';
  	}
 
  	//getting products from database
@@ -98,7 +99,9 @@ include_once "function.php";
 
  		//prepare statement
  		$stmt = $this->conn->prepare($query);
- 		//clean data
+
+ 		//clean characters like special symbols as well as 
+ 		//if some tags available in input values
  		$this->id 				= clean_input($this->id);
  		$this->warehouse_id 	= clean_input($this->warehouse_id);
  		$this->name 			= clean_input($this->name);
@@ -106,7 +109,8 @@ include_once "function.php";
  		$this->stock_balance 	= clean_input($this->stock_balance);
  		$this->price 			= clean_input($this->price);
  		$this->description 		= clean_input($this->description);
- 		//binding of parameter
+
+ 		//binding parameters
  		$stmt->bindParam(':id', $this->id);
  		$stmt->bindParam(':warehouse_id', $this->warehouse_id);
  		$stmt->bindParam(':name', $this->name);

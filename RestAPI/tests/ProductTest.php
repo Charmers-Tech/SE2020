@@ -14,7 +14,7 @@
 			require_once('core/function.php');
 			$this->assertEquals('abc', clean_input('    abc'));
 			$this->assertEquals('abc', clean_input('    <p><b>abc<b></p>'));
-			$this->assertEquals("mgmg's", clean_input("    mgmg's    "));
+			$this->assertEquals("mg mg's", clean_input("    mg mg's    "));
 		}
 
 
