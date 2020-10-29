@@ -9,7 +9,11 @@
 	header('Access-Control-Allow-Methods: GET');
 	
 	//initializing our API
-	include_once('../core/initialize.php');
+	//include_once('../core/initialize.php');
+	
+	include_once('../includes/config.php');
+	
+	include_once('../core/product.php');
 
 	//instantiate product
 	$product = new Product($db);
@@ -18,25 +22,34 @@
 		
 		$product->id = isset($_GET['id']) ? $_GET['id'] : die();
 
-		$product->get_single_data();
+		$result = $product->get_single_data();
 
-		$product_item = array(
-			'id'   			=> $product->id,
-			'name' 			=> $product->name,
-			'photo'			=> $product->photo,
-			'stock_balance' => $product->stock_balance,
-			'price'  		=> $product->price,
-			'description'   => $product->description,
-			'warehouse_id' 	=> $product->warehouse_id,
-			'warehouse_name'=> $product->warehouse_name 	
-		);
+		$num = $result->rowCount();
 
-		http_response_code(200); // OK status
-		echo json_encode(array(
-			"status"  => 1,
-			"data" 	  => $product_item
-		));
-
+		if ($num == 1) {
+			$row = $result->fetch(PDO::FETCH_ASSOC);
+			$product_item = array(
+				'name' 		  => $row['name'],
+				 'photo' 		  => $row['photo'],
+				 'stock_balance'  => $row['stock_balance'],
+				 'price' 		  => $row['price'],
+				 'description'    => $row['description'],
+				 'warehouse_id'	  => $row['warehouse_id'],
+				 'warehouse_name' => $row['warehouse_name']	
+			);
+			http_response_code(200); // OK status
+			echo json_encode(array(
+				"status"  => 1,
+				"data" 	  => $product_item
+			));
+		}
+		else{
+			http_response_code(404); // Page Not Found
+			echo json_encode(array(
+				"status"  => 0,
+				"data" 	  => "Product Not Found"
+			));
+		}
 	}
 	else{
 		http_response_code(503); //service unavailable

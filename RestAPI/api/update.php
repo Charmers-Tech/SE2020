@@ -6,7 +6,7 @@
 	//data which we are getting inside request
 	header('Content-Type: application/json; charset: UTF-8');
 	//method type
-	header('Access-Control-Allow-Methods: POST');
+	header('Access-Control-Allow-Methods: PUT');
 	//it allow header
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 	
@@ -20,7 +20,7 @@
 	//instantiate product
 	$product = new Product($db);
 
-	if ($_SERVER['REQUEST_METHOD'] === "POST") {
+	if ($_SERVER['REQUEST_METHOD'] === "PUT") {
 		
 		//get raw data from request body
 		$data = json_decode(file_get_contents("php://input"));
@@ -43,12 +43,12 @@
 			$product->description 	= $data->description;
 
 			//create product
-			if($product->create_data()){
+			if($product->update_data()){
 
 				http_response_code(200); // OK status
 				echo json_encode(array(
 					"status"  => 1,
-					"message" => "Successfully Created"
+					"message" => "Successfully Updated"
 				));
 
 			}
@@ -56,7 +56,7 @@
 				http_response_code(500); // Intenal server error
 				echo json_encode(array(
 					"status"  => 0,
-					"message" => "Failed to create"
+					"message" => "Failed to update"
 				));
 			}
 		}

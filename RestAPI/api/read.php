@@ -9,7 +9,10 @@
 	header('Access-Control-Allow-Methods: GET');
 	
 	//initializing our API
-	include_once('../core/initialize.php');
+	//include_once('../core/initialize.php');
+	include_once('../includes/config.php');
+	
+	include_once('../core/product.php');
 
 	//instantiate product
 	$product = new Product($db);

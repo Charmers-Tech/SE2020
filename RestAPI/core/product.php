@@ -73,15 +73,7 @@ include_once "function.php";
  		//execute query
  		$stmt->execute();
 
- 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
-
- 		$this->name 		  = $row['name'];
- 		$this->photo 		  = $row['photo'];
- 		$this->stock_balance  = $row['stock_balance'];
- 		$this->price 		  = $row['price'];
- 		$this->description    = $row['description'];
- 		$this->warehouse_id	  = $row['warehouse_id'];
- 		$this->warehouse_name = $row['warehouse_name'];	
+ 		return $stmt; 		
  	}
 
  	//creating new product to database
@@ -127,8 +119,60 @@ include_once "function.php";
  		//print error if something goes wrong
  		printf("Error %s. \n", $stmt->error);
  		return false;
-
  	}
+
+ 	//updating product to database
+ 	public function update_data(){
+ 		
+ 		//create query
+ 		$query = 'UPDATE '.$this->table.' SET 
+		 			warehouse_id 	= :warehouse_id,
+		 			name 			= :name,
+		 			photo 			= :photo,
+		 			stock_balance 	= :stock_balance,
+		 			price 			= :price,
+		 			description 	= :description
+ 				WHERE id = :id';
+
+ 		//prepare statement
+ 		$stmt = $this->conn->prepare($query);
+
+ 		//clean characters like special symbols as well as 
+ 		//if some tags available in input values
+ 		$this->warehouse_id 	= clean_input($this->warehouse_id);
+ 		$this->name 			= clean_input($this->name);
+ 		$this->photo 			= clean_input($this->photo);
+ 		$this->stock_balance 	= clean_input($this->stock_balance);
+ 		$this->price 			= clean_input($this->price);
+ 		$this->description 		= clean_input($this->description);
+ 		$this->id 				= clean_input($this->id);
+
+ 		//binding parameters
+ 		$stmt->bindParam(':warehouse_id', $this->warehouse_id);
+ 		$stmt->bindParam(':name', $this->name);
+ 		$stmt->bindParam(':photo', $this->photo);
+ 		$stmt->bindParam(':stock_balance', $this->stock_balance);
+ 		$stmt->bindParam(':price', $this->price);
+ 		$stmt->bindParam(':description', $this->description);
+ 		$stmt->bindParam(':id', $this->id);
+
+ 		//execute query
+ 		if ($stmt->execute()) {
+ 			return true;
+ 		}
+
+ 		//print error if something goes wrong
+ 		printf("Error %s. \n", $stmt->error);
+ 		return false;
+ 	}
+
+ 	//Deleting product from database
+ 	public funciton delete_data(){
+
+ 		//create query
+ 		$query=
+ 	}
+
 
 
  }

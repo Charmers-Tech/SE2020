@@ -15,6 +15,6 @@
 	$db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
 	$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	define('APP_NAME','PRODUCT ITEM MODULE');
+	define('APP_NAME','PRODUCT ITEM MODULE API');
 
  ?>
