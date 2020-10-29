@@ -167,10 +167,55 @@ include_once "function.php";
  	}
 
  	//Deleting product from database
- 	public funciton delete_data(){
+ 	public function delete_data(){
 
  		//create query
- 		$query=
+ 		$query = 'DELETE FROM '.$this->table.' WHERE id = :id';
+
+ 		//prepare statement
+ 		$stmt = $this->conn->prepare($query);
+
+ 		//clean the data
+ 		$this->id = clean_input($this->id);
+
+ 		//binding parameter
+ 		$stmt->bindParam(':id', $this->id);
+
+ 		//execute query
+ 		if($stmt->execute()){
+ 			return true;
+ 		}
+
+ 		//print error if something goes wrong
+ 		printf("Error %s. \n", $stmt->error);
+ 		return false;
+ 	}
+
+ 	//searching one single products by name from database
+ 	public function search_data(){
+ 		//create query
+ 		$query = 'SELECT 
+ 				 w.name as warehouse_name,
+ 				 p.id,
+ 				 p.warehouse_id,
+ 				 p.name,
+ 				 p.photo,
+ 				 p.stock_balance,
+ 				 p.price,
+ 				 p.description
+ 				 FROM '. $this->table .' p
+ 				 LEFT JOIN 
+ 				 	warehouses w ON p.warehouse_id = w.id
+ 				 WHERE p.name LIKE %:name% ORDER BY p.id DESC';
+
+ 		//prepare statement
+ 		$stmt = $this->conn->prepare($query);
+ 		//binding param
+ 		$stmt->bindParam(1, $this->name);
+ 		//execute query
+ 		$stmt->execute();
+
+ 		return $stmt; 		
  	}
 
 
