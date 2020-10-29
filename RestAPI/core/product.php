@@ -193,6 +193,7 @@ include_once "function.php";
 
  	//searching one single products by name from database
  	public function search_data(){
+
  		//create query
  		$query = 'SELECT 
  				 w.name as warehouse_name,
@@ -206,7 +207,7 @@ include_once "function.php";
  				 FROM '. $this->table .' p
  				 LEFT JOIN 
  				 	warehouses w ON p.warehouse_id = w.id
- 				 WHERE p.name LIKE %:name% ORDER BY p.id DESC';
+ 				 WHERE p.name LIKE :name ORDER BY p.id DESC';
 
  		//prepare statement
  		$stmt = $this->conn->prepare($query);

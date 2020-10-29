@@ -29,12 +29,12 @@
 		if ($num == 1) {
 			$row = $result->fetch(PDO::FETCH_ASSOC);
 			$product_item = array(
-				'name' 		  => $row['name'],
-				'photo' 		  => $row['photo'],
+				'name' 		 	 => $row['name'],
+				'photo' 		 => $row['photo'],
 				'stock_balance'  => $row['stock_balance'],
-				'price' 		  => $row['price'],
+				'price' 		 => $row['price'],
 				'description'    => $row['description'],
-				'warehouse_id'	  => $row['warehouse_id'],
+				'warehouse_id'	 => $row['warehouse_id'],
 				'warehouse_name' => $row['warehouse_name']	
 			);
 			http_response_code(200); // OK status
