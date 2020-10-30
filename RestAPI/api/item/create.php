@@ -6,21 +6,21 @@
 	//data which we are getting inside request
 	header('Content-Type: application/json; charset: UTF-8');
 	//method type
-	header('Access-Control-Allow-Methods: PUT');
+	header('Access-Control-Allow-Methods: POST');
 	//it allow header
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 	
 	//initializing our API
-	//include_once('../core/initialize.php');
+	//include_once('../../core/initialize.php');
 	
-	include_once('../includes/config.php');
+	include_once('../../includes/config.php');
 	
-	include_once('../core/product.php');
+	include_once('../../core/product.php');
 
 	//instantiate product
 	$product = new Product($db);
 
-	if ($_SERVER['REQUEST_METHOD'] === "PUT") {
+	if ($_SERVER['REQUEST_METHOD'] === "POST") {
 		
 		//get raw data from request body
 		$data = json_decode(file_get_contents("php://input"));
@@ -43,12 +43,12 @@
 			$product->description 	= $data->description;
 
 			//create product
-			if($product->update_data()){
+			if($product->create_data()){
 
 				http_response_code(200); // OK status
 				echo json_encode(array(
 					"status"  => 1,
-					"message" => "Successfully Updated"
+					"message" => "Successfully Created"
 				));
 
 			}
@@ -56,7 +56,7 @@
 				http_response_code(500); // Intenal server error
 				echo json_encode(array(
 					"status"  => 0,
-					"message" => "Failed to update"
+					"message" => "Failed to create"
 				));
 			}
 		}

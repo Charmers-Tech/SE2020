@@ -9,21 +9,20 @@
 	header('Access-Control-Allow-Methods: GET');
 	
 	//initializing our API
-	//include_once('../core/initialize.php');
+	//include_once('../../core/initialize.php');
+	include_once('../../includes/config.php');
 	
-	include_once('../includes/config.php');
-	
-	include_once('../core/product.php');
+	include_once('../../core/product.php');
 
 	//instantiate product
 	$product = new Product($db);
 
 	if ($_SERVER['REQUEST_METHOD'] === "GET") {
 		
-		$product->name = isset($_GET['name']) ? $_GET['name'] : die();
+		//blog product query
+		$result = $product->get_all_data();
 
-		$result = $product->search_data();
-
+		//get the row count
 		$num = $result->rowCount();
 
 		if($num > 0){
@@ -51,14 +50,14 @@
 				"data" 	  => $product_arr['data'] 
 			));
 
-		}
-		else{
-			http_response_code(404); // Page Not Found
+		}else{
+			http_response_code(404); // page not found
 			echo json_encode(array(
-				"status"  => 0,
-				"data" 	  => "Product Not Found"
+				"status"    => 0,
+				"message" 	=> "No product found"
 			));
 		}
+
 	}
 	else{
 		http_response_code(503); //service unavailable

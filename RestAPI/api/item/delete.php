@@ -6,49 +6,37 @@
 	//data which we are getting inside request
 	header('Content-Type: application/json; charset: UTF-8');
 	//method type
-	header('Access-Control-Allow-Methods: POST');
+	header('Access-Control-Allow-Methods: DELETE');
 	//it allow header
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 	
 	//initializing our API
-	//include_once('../core/initialize.php');
+	//include_once('../../core/initialize.php');
 	
-	include_once('../includes/config.php');
+	include_once('../../includes/config.php');
 	
-	include_once('../core/product.php');
+	include_once('../../core/product.php');
 
 	//instantiate product
 	$product = new Product($db);
 
-	if ($_SERVER['REQUEST_METHOD'] === "POST") {
+	if ($_SERVER['REQUEST_METHOD'] === "DELETE") {
 		
 		//get raw data from request body
 		$data = json_decode(file_get_contents("php://input"));
 
-		if(	!empty($data->id) && 
-			!empty($data->warehouse_id) &&
-			!empty($data->name) &&
-			!empty($data->photo) &&
-			!empty($data->stock_balance) &&
-			!empty($data->price) &&
-			!empty($data->description))
+		if(	!empty($data->id))
 		{
 			//submit data
-			$product->id 			= $data->id;
-			$product->warehouse_id 	= $data->warehouse_id;
-			$product->name 			= $data->name;
-			$product->photo 		= $data->photo;
-			$product->stock_balance = $data->stock_balance;
-			$product->price 		= $data->price;
-			$product->description 	= $data->description;
+			$product->id = $data->id;
 
 			//create product
-			if($product->create_data()){
+			if($product->delete_data()){
 
 				http_response_code(200); // OK status
 				echo json_encode(array(
 					"status"  => 1,
-					"message" => "Successfully Created"
+					"message" => "Successfully Deleted"
 				));
 
 			}
@@ -56,7 +44,7 @@
 				http_response_code(500); // Intenal server error
 				echo json_encode(array(
 					"status"  => 0,
-					"message" => "Failed to create"
+					"message" => "Failed to delete"
 				));
 			}
 		}
@@ -64,7 +52,7 @@
 			http_response_code(404); // Page not found
 			echo json_encode(array(
 				"status"  => 0,
-				"message" => "All values neededs"
+				"message" => "Product ID code needed"
 			));
 		}	
 	}

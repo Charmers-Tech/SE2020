@@ -9,52 +9,45 @@
 	header('Access-Control-Allow-Methods: GET');
 	
 	//initializing our API
-	//include_once('../core/initialize.php');
-	include_once('../includes/config.php');
+	//include_once('../../core/initialize.php');
+	include_once('../../includes/config.php');
 	
-	include_once('../core/product.php');
+	include_once('../../core/warehouse.php');
 
-	//instantiate product
-	$product = new Product($db);
+	//instantiate warehouse
+	$warehouse = new Warehouse($db);
 
 	if ($_SERVER['REQUEST_METHOD'] === "GET") {
 		
-		//blog product query
-		$result = $product->get_all_data();
+		$result = $warehouse->get_all_data();
 
 		//get the row count
 		$num = $result->rowCount();
 
 		if($num > 0){
-			$product_arr = array();
-			$product_arr['data'] = array();
+			$warehouse_arr = array();
+			$warehouse_arr['data'] = array();
 			
 			while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 				extract($row);
-				$product_item = array(
+				$warehouse_item = array(
 					'id'   			=> $id,
-					'name' 			=> $name,
-					'photo'			=> $photo,
-					'stock_balance' => $stock_balance,
-					'price'  		=> $price,
-					'description'   => html_entity_decode($description),
-					'warehouse_id' 	=> $warehouse_id,
-					'warehouse_name'=> $warehouse_name 	
+					'name' 			=> $name	
 				);
 
-				array_push($product_arr['data'], $product_item);
+				array_push($warehouse_arr['data'], $warehouse_item);
 			}
 			http_response_code(200); // OK status
 			echo json_encode(array(
 				"status"  => 1,
-				"data" 	  => $product_arr['data'] 
+				"data" 	  => $warehouse_arr['data'] 
 			));
 
 		}else{
 			http_response_code(404); // page not found
 			echo json_encode(array(
 				"status"    => 0,
-				"message" 	=> "No product found"
+				"message" 	=> "No warehouse found"
 			));
 		}
 
