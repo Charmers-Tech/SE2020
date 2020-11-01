@@ -154,11 +154,11 @@
                             <td>$120</td>
                             <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
 
@@ -168,13 +168,13 @@
                             <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
                             <td>5</td>
                             <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis  </td>
+                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
 
@@ -186,11 +186,11 @@
                             <td>$120</td>
                             <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
 
@@ -202,11 +202,11 @@
                             <td>$120</td>
                             <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
 
@@ -216,13 +216,13 @@
                             <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
                             <td>5</td>
                             <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis  </td>
+                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
 
@@ -232,16 +232,16 @@
                             <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
                             <td>5</td>
                             <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis  </td>
+                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
-
+                        
                         <tr>
                             <td>7</td>
                             <td>Iphone</td>
@@ -250,11 +250,11 @@
                             <td>$120</td>
                             <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
 
@@ -264,13 +264,13 @@
                             <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
                             <td>5</td>
                             <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis  </td>
+                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
 
@@ -280,13 +280,13 @@
                             <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
                             <td>5</td>
                             <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis  </td>
+                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
 
@@ -296,15 +296,16 @@
                             <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
                             <td>5</td>
                             <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis  </td>
+                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
                             <td>
-                            <a href="admin-teacherinfo-read.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
+                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="admin-teacherTimetable-update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-                            <a href="admin-teacherTimetable-index.php"><span class='glyphicon glyphicon-trash'></span></a>
+                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
                         </tr>
+
                     
                     </tbody>
                 </table>
