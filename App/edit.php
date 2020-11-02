@@ -55,6 +55,7 @@
  			text-align: left;
  		}
  		
+ 		
  		button{
  			width: 80px;
  			background-color: #226089;
@@ -69,39 +70,38 @@
         	font-weight:bold;
   			}
 
-
- 	</style>
+	</style>
 </head>
 <body>
 
 	<div id="wrap">
 		<form >
-			<h1>Add Product</h1>
+			<h1>Edit Product</h1>
 			<div class ="form">
 				<table>
 					<tr>
 						<th width="150px" >Product Name</th>
-						<th ><input type="text" name="name" class="form-control" required></th>
+						<th ><input type="text" name="name" class="form-control"></th>
 					</tr>
 					<tr>
 						<th>Product Photo</th>
-						<th><input type="file" name="photo" height="30px" class="form-control-file" required></th>
+						<th><input type="file" name="photo" height="30px" class="form-control-file" ></th>
 					</tr>
 					<tr>
 						<th >Descriptions</th>
-						<th ><textarea class="form-control" rows="3" id="descriptions" required></textarea></th>
+						<th ><textarea class="form-control" rows="3" id="descriptions" ></textarea></th>
 					</tr>
 					<tr>
 						<th >Stock Balance</th>
-						<th ><input type="text" name="stockBal" class="form-control" required></th>
+						<th ><input type="text" name="stockBal" class="form-control" ></th>
 					</tr>
 					<tr>
 						<th >Price</th>
-						<th ><input type="text" name="price" class="form-control" required></th>
+						<th ><input type="text" name="price" class="form-control" ></th>
 					</tr>
 					<tr>
 						<th >Warehouse</th>
-						<th ><select class="form-control" name="warehouse" required >
+						<th ><select class="form-control" name="warehouse" >
 							<option value="">Choose...</option>
 							<option>1</option>
 							<option>2</option>
@@ -113,7 +113,7 @@
 					<tr>
 						<th></th>
 						<th>
-							<button type="submit" class="button">Submit</button>
+							<button type="submit" class="button">Save</button>
 							<button type="cancel" class="button">Cancel</button>
 						</th>
 					</tr>

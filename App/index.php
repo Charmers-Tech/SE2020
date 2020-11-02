@@ -93,15 +93,6 @@
         border: 1px solid #4CAF50;
         text-decoration: none;
         }
-
-        @media only screen and (max-width: 600px) {
-            body {
-                background-color: lightblue;
-            }
-        }
-
-        
-
     </style>
 </head>
 <body>
