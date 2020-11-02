@@ -107,16 +107,18 @@
         
         <!--search box and add new item button-->
         <div class="row">
-            <div class="col-md-11">
-                <form class="search" method="post" action="#">
-                    <div class="input-group">
+            <div class="col-md-5">
+                <div class="input-group">
+                    <form class="search" method="post" action="#">
                         <input type="text" name="search" id="search" class="form-control" placeholder="Search...">
-                        <button type="submit" id="submit" name="submit"><i class="fa fa-search"></i></button>    
-                    </div>
-                </form> 
+                        <span class="input-group-btn">
+                            <button type="submit" id="submit" class="btn" name="submit"><i class="fa fa-search"></i></button> 
+                        </span>                      
+                    </form>
+                </div> 
             </div>
-            <div class="col-md-1">
-                <a href="#" class="btn add pull-right">Add New Item</a>
+            <div class="col-md-7">
+                <a href="#" class="btn add pull-right ">Add New Item</a>
             </div>
         </div>
         
@@ -136,168 +138,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
-                        <tr>
-                            <td>1</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>2</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>3</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>4</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>5</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>6</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td>7</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>8</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>9</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>10</td>
-                            <td>Iphone</td>
-                            <td><img src="https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" alt="iphone" style="width:40px;height:40px;"> </td>
-                            <td>5</td>
-                            <td>$120</td>
-                            <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id temporibus debitis </td>
-                            <td>
-                            <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
-
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
-
-                            <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
-                            </td>
-                        </tr>
-
-                    
+                        <?php include_once "actions/retrieve.php" ?>    
                     </tbody>
                 </table>
             </div>
@@ -307,11 +149,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="pagination">
-                    <a href="#">&laquo;</a>
-                    <a href="#">1</a>
-                    <a href="#" class="active">2</a>
-                    <a href="#">3</a>
-                    <a href="#">&raquo;</a>
+                    
+                    <a href="index.php?page=<?php echo $prev ?>">&laquo; prevoius</a>
+                   
+                    <a href="index.php?page=<?php echo $next ?>">next &raquo;</a>
                 </div>
             </div>
         </div>
