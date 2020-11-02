@@ -4,7 +4,7 @@
 	$host = $_SERVER['HTTP_HOST'];
 
 	$url = $scheme.'://'.$host.'/SE2020/RestAPI/api/item/read.php';
-	
+
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL, $url);
@@ -67,7 +67,10 @@
 	   	</td>
 	    <td><?php echo "$stock_balance"; ?></td>
 	    <td><?php echo "\$".$price; ?></td>
-	    <td><?php echo "$description"; ?></td>
+	    <td>
+	    	<?php echo substr($description, 0 ,50); ?>
+			<?php echo strlen($description) > 50 ? '...' : '' ?>	
+	    </td>
 	    <td>
 	        <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
@@ -84,3 +87,19 @@
 	 }
 
 ?>
+</tbody>
+                </table>
+            </div>
+        </div>
+
+        <!--pagination section-->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pagination">
+                    
+                    <a href="index.php?page=<?php echo $prev ?>">&laquo; prevoius</a>
+                   
+                    <a href="index.php?page=<?php echo $next ?>">next &raquo;</a>
+                </div>
+            </div>
+        </div>

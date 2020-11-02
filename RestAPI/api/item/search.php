@@ -6,7 +6,7 @@
 	//data which we are getting inside request
 	header('Content-Type: application/json');
 	//method type
-	header('Access-Control-Allow-Methods: GET');
+	header('Access-Control-Allow-Methods: POST');
 	//it allow header
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 	
@@ -20,53 +20,66 @@
 	//instantiate product
 	$product = new Product($db);
 
-	if ($_SERVER['REQUEST_METHOD'] === "GET") {
+	if ($_SERVER['REQUEST_METHOD'] === "POST") {
 		
-		$product->name = isset($_GET['name']) ? $_GET['name'] : die();
+		//get raw data from request body
+		$data = json_decode(file_get_contents("php://input"));
 
-		$result = $product->search_data();
+		if(	!empty($data->name))
+		{
+			$product->name = $data->name;
 
-		$num = $result->rowCount();
+			$result = $product->search_data();
 
-		if($num > 0){
-			$product_arr = array();
-			$product_arr['data'] = array();
-			
-			while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-				extract($row);
-				$product_item = array(
-					'id'   			=> $id,
-					'name' 			=> $name,
-					'photo'			=> $photo,
-					'stock_balance' => $stock_balance,
-					'price'  		=> $price,
-					'description'   => html_entity_decode($description),
-					'warehouse_id' 	=> $warehouse_id,
-					'warehouse_name'=> $warehouse_name 	
-				);
+			$num = $result->rowCount();
 
-				array_push($product_arr['data'], $product_item);
+			if($num > 0){
+				$product_arr = array();
+				$product_arr['data'] = array();
+				
+				while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+					extract($row);
+					$product_item = array(
+						'id'   			=> $id,
+						'name' 			=> $name,
+						'photo'			=> $photo,
+						'stock_balance' => $stock_balance,
+						'price'  		=> $price,
+						'description'   => html_entity_decode($description),
+						'warehouse_id' 	=> $warehouse_id,
+						'warehouse_name'=> $warehouse_name 	
+					);
+
+					array_push($product_arr['data'], $product_item);
+				}
+				http_response_code(200); // OK status
+				echo json_encode(array(
+					"status"  => 1,
+					"data" 	  => $product_arr['data'] 
+				));
+
 			}
-			http_response_code(200); // OK status
-			echo json_encode(array(
-				"status"  => 1,
-				"data" 	  => $product_arr['data'] 
-			));
-
+			else{
+				http_response_code(404); // Page Not Found
+				echo json_encode(array(
+					"status"  => 0,
+					"data" 	  => "Product Not Found"
+				));
+			}
 		}
 		else{
-			http_response_code(404); // Page Not Found
-			echo json_encode(array(
-				"status"  => 0,
-				"data" 	  => "Product Not Found"
-			));
-		}
+				http_response_code(404); // Page Not Found
+				echo json_encode(array(
+					"status"  => 0,
+					"data" 	  => "Type product name in Search"
+				));
+			}
 	}
 	else{
 		http_response_code(503); //service unavailable
 		echo json_encode(array(
 			"status"  => 0,
-			"message" => "Access Denied"
+			"data" => "Access Denied"
 		));
 	}
 

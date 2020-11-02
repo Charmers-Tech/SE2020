@@ -207,12 +207,17 @@ include_once "function.php";
  				 FROM '. $this->table .' p
  				 LEFT JOIN 
  				 	warehouses w ON p.warehouse_id = w.id
- 				 WHERE p.name LIKE :name ORDER BY p.id DESC';
+ 				 WHERE p.name LIKE :name';
 
  		//prepare statement
  		$stmt = $this->conn->prepare($query);
- 		//binding param
- 		$stmt->bindParam(1, $this->name);
+
+ 		//clean the data
+ 		$this->name = clean_input($this->name);
+
+ 		//binding parameter
+ 		$stmt->bindParam(':name', $this->name);
+
  		//execute query
  		$stmt->execute();
 

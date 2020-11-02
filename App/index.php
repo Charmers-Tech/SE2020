@@ -1,3 +1,4 @@
+<?php include_once "actions/function.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -118,7 +119,7 @@
         <div class="row">
             <div class="col-md-5">
                 <div class="input-group">
-                    <form class="search" method="post" action="#">
+                    <form class="search" method="post" action="index.php">
                         <input type="text" name="search" id="search" class="form-control" placeholder="Search...">
                         <span class="input-group-btn">
                             <button type="submit" id="submit" class="btn" name="submit"><i class="fa fa-search"></i></button> 
@@ -148,23 +149,18 @@
                     </thead>
                     <tbody>
 
-                        <?php include_once "actions/retrieve.php" ?>    
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!--pagination section-->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="pagination">
-                    
-                    <a href="index.php?page=<?php echo $prev ?>">&laquo; prevoius</a>
-                   
-                    <a href="index.php?page=<?php echo $next ?>">next &raquo;</a>
-                </div>
-            </div>
-        </div>
+                        <?php 
+                            $flag = false;
+                            if (isset($_POST['submit'])) {
+                                $flag = true;
+                            }
+                            if ($flag) {
+                                include_once "actions/search.php" ;
+                            }
+                            else {
+                                include_once "actions/retrieve.php" ;
+                            }
+                        ?>
         
     </section>
 
