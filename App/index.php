@@ -125,7 +125,7 @@
                 </form> 
             </div>
             <div class="col-md-1">
-                <a href="#" class="btn add pull-right">Add New Item</a>
+                <a href="insert.php" class="btn add pull-right">Add New Item</a>
             </div>
         </div>
         
@@ -156,7 +156,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -172,7 +172,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -188,7 +188,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -204,7 +204,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -220,7 +220,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -236,7 +236,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -252,7 +252,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -268,7 +268,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -284,7 +284,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
@@ -300,7 +300,7 @@
                             <td>
                             <a href="view.php"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-                            <a href="update.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+                            <a href="edit.php"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
                             <a href="delete.php"><span class='glyphicon glyphicon-trash'></span></a>
                             </td>
