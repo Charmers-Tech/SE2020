@@ -1,6 +1,10 @@
 <?php 
+	
+	$scheme = $_SERVER['REQUEST_SCHEME'];
+	$host = $_SERVER['HTTP_HOST'];
 
-	$url = 'http://localhost/SE2020/RestAPI/api/item/read.php';
+	$url = $scheme.'://'.$host.'/SE2020/RestAPI/api/item/read.php';
+	
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($ch, CURLOPT_URL, $url);

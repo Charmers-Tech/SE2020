@@ -7,6 +7,8 @@
 	header('Content-Type: application/json');
 	//method type
 	header('Access-Control-Allow-Methods: GET');
+	//it allow header
+	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 	
 	//initializing our API
 	//include_once('../../core/initialize.php');
