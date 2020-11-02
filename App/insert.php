@@ -85,7 +85,12 @@
 					</tr>
 					<tr>
 						<th>Product Photo</th>
-						<th><input type="file" name="photo" height="30px" class="form-control-file" required></th>
+						<th>
+							<div class="custom-file">
+								<input type="file" name="photo" class="custom-file-input file-upload form-control-file " required> 
+								 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+							</div>
+						</th>
 					</tr>
 					<tr>
 						<th >Descriptions</th>
@@ -93,11 +98,11 @@
 					</tr>
 					<tr>
 						<th >Stock Balance</th>
-						<th ><input type="text" name="stockBal" class="form-control" required></th>
+						<th ><input type="number" name="stockBal" min="0" max="99999" class="form-control" required></th>
 					</tr>
 					<tr>
 						<th >Price</th>
-						<th ><input type="text" name="price" class="form-control" required></th>
+						<th ><input type="number" name="price" class="form-control" required></th>
 					</tr>
 					<tr>
 						<th >Warehouse</th>
