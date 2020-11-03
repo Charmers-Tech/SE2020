@@ -85,7 +85,9 @@
 					</tr>
 					<tr>
 						<th>Product Photo</th>
-						<th><input type="file" name="photo" height="30px" class="form-control-file" ></th>
+						<th>
+							<input type="file" name="photo" accept="image/x-png,image/jpeg" class=" file-upload form-control-file " required>
+						</th>
 					</tr>
 					<tr>
 						<th >Descriptions</th>
@@ -93,11 +95,11 @@
 					</tr>
 					<tr>
 						<th >Stock Balance</th>
-						<th ><input type="text" name="stockBal" class="form-control" ></th>
+						<th ><input type="number" name="stockBal" min="0" max="99999" class="form-control" ></th>
 					</tr>
 					<tr>
 						<th >Price</th>
-						<th ><input type="text" name="price" class="form-control" ></th>
+						<th ><input type="number" name="price" min="1" class="form-control" ></th>
 					</tr>
 					<tr>
 						<th >Warehouse</th>

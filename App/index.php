@@ -93,6 +93,19 @@
         border: 1px solid #4CAF50;
         text-decoration: none;
         }
+        .wrapper{
+            width: 500px;
+            margin:30px 550px;
+        }
+
+        *{
+            font-family:arial;
+        }
+
+        .delete{
+            color:red;
+            font-weight:bold;
+        }
     </style>
 </head>
 <body>
@@ -158,5 +171,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('delete');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+        }
+        }
+    </script>
 </body>
 </html>
