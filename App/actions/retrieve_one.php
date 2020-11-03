@@ -1,6 +1,5 @@
 <?php 
 	
-	$id = 3;
 	$url = 'http://localhost/item-api/api/item/read_single.php?id=';
 	$search_url = $url.$id;
 	$ch = curl_init();

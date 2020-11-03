@@ -56,7 +56,7 @@
 		http_response_code(503); //service unavailable
 		echo json_encode(array(
 			"status"  => 0,
-			"message" => "Access Denied"
+			"data" => "Access Denied"
 		));
 	}
 

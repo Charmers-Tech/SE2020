@@ -56,7 +56,7 @@
 			http_response_code(404); // page not found
 			echo json_encode(array(
 				"status"    => 0,
-				"message" 	=> "No product found"
+				"data" 	=> "No product found"
 			));
 		}
 
@@ -65,7 +65,7 @@
 		http_response_code(503); //service unavailable
 		echo json_encode(array(
 			"status"  => 0,
-			"message" => "Access Denied"
+			"data" => "Access Denied"
 		));
 	}
 

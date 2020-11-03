@@ -1,3 +1,43 @@
+<?php 
+	include_once "actions/function.php";
+
+	if (isset($_GET['id'])) {
+
+		$id = decrypt_data(clean_input($_GET['id']));
+		$scheme = $_SERVER['REQUEST_SCHEME'];
+		$host = $_SERVER['HTTP_HOST'];
+
+		$url = $scheme.'://'.$host.'/SE2020/RestAPI/api/item/read_single.php?id=';
+		$search_url = $url.$id;
+		$ch = curl_init();
+	    curl_setopt($ch, CURLOPT_URL, "URL");
+	    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+		curl_setopt($ch, CURLOPT_URL, $search_url);
+		$products = curl_exec($ch);
+		curl_close($ch);
+		 if (empty($products)){
+	      print "Nothing returned from API.<br>";
+	  	}
+		else{
+		     $decode = json_decode($products, true);
+		     if($decode["status"] == 1){
+		     	$result = $decode["data"];
+			     	$name 			= $result['name'];
+			     	$photo 			= $result['photo'];
+			     	$stock_balance 	= $result['stock_balance'];
+			     	$price 			= $result['price'];
+			     	$description 	= $result['description'];
+			     	$warehouse_name = $result['warehouse_name'];
+		     }
+		     else{
+		     	echo $decode["data"];
+		     }
+		 }
+	}
+
+	 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,23 +103,23 @@
 				<div class="col-md-5">
 					<div class="form-group">
 						<label>Product Name:</label>
-						<p class="form-control-static">Iphone</p>
+						<p class="form-control-static"><?php echo $name; ?></p>
 					</div>
 					<div class="form-group">
 						<label>Stock Balance:</label>
-						<p class="form-control-static">4</p>
+						<p class="form-control-static"><?php echo $stock_balance; ?></p>
 					</div>
 					<div class="form-group">
 						<label>Price:</label>
-						<p class="form-control-static">$234</p>
+						<p class="form-control-static">$<?php echo $price; ?></p>
 					</div>
 					<div class="form-group">
 						<label>Warehouse:</label>
-						<p class="form-control-static">1</p>
+						<p class="form-control-static"><?php echo $warehouse_name; ?></p>
 					</div>
 				</div>
 				<div class="col-md-5">
-					<img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3oYjc?ver=a28c" alt="iphone" class="image">
+					<img src="images/<?php echo $photo; ?>" alt="<?php echo $photo; ?>" class="image">
 				</div>
 				<div class="col-md-1"></div>
 			</div>
@@ -91,7 +131,9 @@
 				<div class="col-md-10">
 					<div class="form-group">
 						<label>Description:</label>
-						<p class="form-control-static description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere nam unde ipsam. Quisquam dolorum sapiente iusto provident illo possimus architecto omnis hic similique quas tenetur, aperiam amet, vel excepturi perferendis!</p>
+						<p class="form-control-static description">
+							<?php echo $description; ?>
+						</p>
 					</div>
 					<a href="index.php" class="btn backBtn">Back</a>
 				</div>
