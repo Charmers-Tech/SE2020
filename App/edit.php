@@ -15,7 +15,7 @@
  			}
 
  		#wrap{
- 			width: 500px;
+ 			width: 1000px;
  			padding: 20px;
  			margin: 10px auto;
  			border: 4px solid #ddd;
@@ -65,7 +65,21 @@
  			padding:5px;
   			
   		}
-  		.button:hover{
+  		.backBtn{
+ 			width: 80px;
+ 			background-color: #226089;
+ 			color: #ffffff;
+ 			border:none;
+ 			border-radius: 4px;
+ 			padding:5px;
+  			
+  		}
+  		.backBtn:hover{
+  			background-color:#2f89fc;
+        	font-weight:bold;
+        	color: white;
+  		}
+  		button:hover{
   			background-color:#2f89fc;
         	font-weight:bold;
   			}
@@ -81,7 +95,7 @@
 				<table>
 					<tr>
 						<th width="150px" >Product Name</th>
-						<th ><input type="text" name="name" class="form-control"></th>
+						<th ><input type="text" name="name" class="form-control" required></th>
 					</tr>
 					<tr>
 						<th>Product Photo</th>
@@ -91,15 +105,15 @@
 					</tr>
 					<tr>
 						<th >Descriptions</th>
-						<th ><textarea class="form-control" rows="3" id="descriptions" ></textarea></th>
+						<th ><textarea class="form-control" rows="3" id="descriptions" required></textarea></th>
 					</tr>
 					<tr>
 						<th >Stock Balance</th>
-						<th ><input type="number" name="stockBal" min="0" max="99999" class="form-control" ></th>
+						<th ><input type="number" name="stockBal" min="0" max="99999" class="form-control" required></th>
 					</tr>
 					<tr>
 						<th >Price</th>
-						<th ><input type="number" name="price" min="1" class="form-control" ></th>
+						<th ><input type="number" name="price" min="1" class="form-control" required></th>
 					</tr>
 					<tr>
 						<th >Warehouse</th>
@@ -115,8 +129,9 @@
 					<tr>
 						<th></th>
 						<th>
+							
 							<button type="submit" class="button">Save</button>
-							<button type="cancel" class="button">Cancel</button>
+							<a href="index.php" class="btn backBtn">Cancel</a>
 						</th>
 					</tr>
 				</table>

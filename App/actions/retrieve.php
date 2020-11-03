@@ -1,5 +1,4 @@
 
-
 <?php 
 	
 	$scheme = $_SERVER['REQUEST_SCHEME'];
@@ -78,26 +77,10 @@
 	    <td>
 	        <a href="view.php?id=<?php echo encrypt_data($p_id) ?>"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-	        <a href="update.php?id=<?php echo encrypt_data($p_id) ?>"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+	        <a href="edit.php?id=<?php echo encrypt_data($p_id) ?>"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
             <a href="delete.php?id=<?php echo encrypt_data($p_id) ?>" onclick="document.getElementById('delete').style.display='block'"><span class='glyphicon glyphicon-trash'></span></a>
 
-			<!--delete alert box-->
-            <div id="delete" class="modal">
-				<div class="wrapper">
-					<form action="#" method="post">
-						<div class="alert alert-info fade in">
-							<input type="hidden" name="id" value="1"/>
-							<p class="delete">Are you sure you want to delete this record?</p><br>
-							<p>
-								<input type="submit" value="Yes" class="btn btn-danger">
-								<a href="index.php" class="btn btn-default">No</a>
-							</p>
-						</div>
-					</form>	        	
-				</div>
-            </div>
-			<!--end of delete alert box section-->
 	    </td>
 	</tr>
 
@@ -110,29 +93,19 @@
 
 ?>
 </tbody>
-                </table>
+     </table>
             </div>
-        </div>
+		        </div>
 
-        <!--pagination section-->
-        <div class="row">
-            <div class="col-md-12">
-                <div class="pagination">
-                    
-                    <a href="index.php?page=<?php echo $prev ?>">&laquo; prevoius</a>
-                   
-                    <a href="index.php?page=<?php echo $next ?>">next &raquo;</a>
-                </div>
-            </div>
-        </div>
+<!--pagination section-->
+<div class="row">
+	<div class="col-md-12">
+		<div class="pagination">
+		                    
+		 	<a href="index.php?page=<?php echo $prev ?>">&laquo; prevoius</a>
+		                   
+		     <a href="index.php?page=<?php echo $next ?>">next &raquo;</a>
+		</div>
+	</div>
+</div>
 
-
-
-
-
-
-
-
-
-
->>>>>>> c225cac9ace71f3b0b66a1f50dc8dd645a2a8e56

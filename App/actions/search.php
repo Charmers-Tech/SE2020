@@ -52,7 +52,7 @@
 	    <td>
 	        <a href="view.php?id=<?php echo encrypt_data($p_id) ?>"><span class='glyphicon glyphicon-eye-open mr-4' ></span></a>
 
-	        <a href="update.php?id=<?php echo encrypt_data($p_id) ?>"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
+	        <a href="edit.php?id=<?php echo encrypt_data($p_id) ?>"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
 	        <a href="delete.phpid=<?php echo encrypt_data($p_id) ?>"><span class='glyphicon glyphicon-trash'></span></a>
 	    </td>

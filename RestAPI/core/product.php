@@ -40,7 +40,7 @@ include_once "function.php";
  				 p.description
  				 FROM '. $this->table .' p
  				 LEFT JOIN 
- 				 	warehouses w ON p.warehouse_id = w.id';
+ 				 	warehouses w ON p.warehouse_id = w.id ORDER BY p.id DESC';
 
  		//prepare statement
  		$stmt = $this->conn->prepare($query);

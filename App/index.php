@@ -93,7 +93,7 @@
         border: 1px solid #4CAF50;
         text-decoration: none;
         }
-        .wrapper{
+        /*.wrapper{
             width: 500px;
             margin:30px 550px;
         }
@@ -105,7 +105,7 @@
         .delete{
             color:red;
             font-weight:bold;
-        }
+        }*/
     </style>
 </head>
 <body>
@@ -132,7 +132,7 @@
                 </div> 
             </div>
             <div class="col-md-7">
-                <a href="#" class="btn add pull-right ">Add New Item</a>
+                <a href="insert.php" class="btn add pull-right ">Add New Item</a>
             </div>
         </div>
         
@@ -165,7 +165,22 @@
                                 include_once "actions/retrieve.php" ;
                             }
                         ?>
-        
+        <!--delete alert box-->
+            <!-- <div id="delete" class="modal">
+                <div class="wrapper">
+                    <form action="#" method="post">
+                        <div class="alert alert-info fade in">
+                            <input type="hidden" name="id" value="1"/>
+                            <p class="delete">Are you sure you want to delete this record?</p><br>
+                            <p>
+                                <a href=""  class="btn btn-danger">Yes<a>
+                                <a href="index.php" class="btn btn-default">No</a>
+                            </p>
+                        </div>
+                    </form>             
+                </div>
+            </div> -->
+            <!--end of delete alert box section-->
     </section>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -173,14 +188,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script>
         // Get the modal
-        var modal = document.getElementById('delete');
+        // var modal = document.getElementById('delete');
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-        }
-        }
+        // // When the user clicks anywhere outside of the modal, close it
+        // window.onclick = function(event) {
+        //     if (event.target == modal) {
+        //         modal.style.display = "none";
+        // }
+        // }
     </script>
 </body>
 </html>

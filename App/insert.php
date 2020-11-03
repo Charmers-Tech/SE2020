@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit Product</title>
+	<title>Add Product</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
@@ -64,7 +64,22 @@
  			padding:5px;
   			
   		}
-  		.button:hover{
+  		.backBtn{
+ 			width: 80px;
+ 			background-color: #226089;
+ 			color: #ffffff;
+ 			border:none;
+ 			border-radius: 4px;
+ 			padding:5px;
+  			
+  		}
+  		.backBtn:hover{
+  			background-color:#2f89fc;
+        	font-weight:bold;
+        	color: white;
+  		}
+
+  		button:hover{
   			background-color:#2f89fc;
         	font-weight:bold;
   			}
@@ -75,13 +90,15 @@
 <body>
 
 	<div id="wrap">
-		<form >
+		<form method="post" action="actions/create.php" enctype="multipart/form-data">
 			<h1>Add Product</h1>
 			<div class ="form">
 				<table>
 					<tr>
 						<th width="150px" >Product Name</th>
-						<th ><input type="text" name="name" class="form-control" required></th>
+						<th >
+							<input type="text" name="name" class="form-control" required>
+						</th>
 					</tr>
 					<tr>
 						<th>Product Photo</th>
@@ -91,7 +108,7 @@
 					</tr>
 					<tr>
 						<th >Descriptions</th>
-						<th ><textarea class="form-control" rows="3" id="descriptions" required></textarea></th>
+						<th ><textarea class="form-control" rows="3" id="descriptions" name="description" required></textarea></th>
 					</tr>
 					<tr>
 						<th >Stock Balance</th>
@@ -103,20 +120,19 @@
 					</tr>
 					<tr>
 						<th >Warehouse</th>
-						<th ><select class="form-control" name="warehouse" required >
-							<option value="">Choose...</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							</select>
+						<th >
+							<select class="form-control" name="warehouse" required >
+								<option value="">Choose...</option>
+								<?php include_once "actions/wh_retrieve.php" ?>
 						</th>
 					</tr>
 					<tr>
 						<th></th>
 						<th>
-							<button type="submit" class="button">Submit</button>
-							<button type="cancel" class="button">Cancel</button>
+							<button type="submit" class="button" name="create">
+								Submit
+							</button>
+							<a href="index.php" class="btn backBtn">Cancel</a>
 						</th>
 					</tr>
 				</table>
