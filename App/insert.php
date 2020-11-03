@@ -86,10 +86,7 @@
 					<tr>
 						<th>Product Photo</th>
 						<th>
-							<div class="custom-file">
-								<input type="file" name="photo" class="custom-file-input file-upload form-control-file " required> 
-								 <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-							</div>
+							<input type="file" name="photo" accept="image/x-png,image/jpeg" class=" file-upload form-control-file " required>
 						</th>
 					</tr>
 					<tr>
@@ -102,7 +99,7 @@
 					</tr>
 					<tr>
 						<th >Price</th>
-						<th ><input type="number" name="price" class="form-control" required></th>
+						<th ><input type="number" name="price" min="1" class="form-control" required></th>
 					</tr>
 					<tr>
 						<th >Warehouse</th>
