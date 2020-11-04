@@ -75,10 +75,28 @@
  			padding:5px;
   			
   		}
-  		.button:hover{
+  		.backBtn{
+ 			width: 80px;
+			height:30px;
+ 			background-color: #226089;
+ 			color: #ffffff;
+ 			border:none;
+ 			border-radius: 4px;
+ 			padding:5px;
+  			
+  		}
+  		.backBtn:hover{
+  			background-color:#2f89fc;
+        	font-weight:bold;
+        	color: white;
+  		}
+  		button:hover{
   			background-color:#2f89fc;
         	font-weight:bold;
   			}
+  		a{
+  			text-decoration: none;
+  		}
 
 
  	</style>
@@ -116,14 +134,19 @@
 						<th >Warehouse</th>
 						<td ><select class="form-control" name="warehouse" required >
 							<option value="">Choose...</option>
-							
+							<?php include_once "actions/wh_retrieve.php" ?>
 						</td>
 					</tr>
 					<tr>
 						<th></th>
 						<td>
-							<button type="submit" class="button">Submit</button>
-							<button type="cancel" class="button">Cancel</button>
+							<button type="submit" class="button" name="create">
+								Submit
+							</button>
+							<button>
+								<a href="index.php" class="button backBtn">Cancel</a>
+							</button>
+							
 						</td>
 					</tr>
 				</table>
