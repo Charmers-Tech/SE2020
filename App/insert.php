@@ -94,8 +94,11 @@
   			background-color:#2f89fc;
         	font-weight:bold;
   			}
-  		a{
+  		a{ 
   			text-decoration: none;
+  			color: #ffffff;
+  			display: block;
+  			text-align: center;
   		}
 
 
@@ -104,7 +107,7 @@
 <body>
     
 <div id="wrap">
-		<form >
+		<form method="post" action="actions/create.php" enctype="multipart/form-data">
 			<h1>Add Product</h1>
 			<div class ="form">
 				<table>
@@ -143,10 +146,9 @@
 							<button type="submit" class="button" name="create">
 								Submit
 							</button>
-							<button>
-								<a href="index.php" class="button backBtn">Cancel</a>
+							<button type="button" onclick="window.location = '/SE2020/App/index.php';">
+								Cancel
 							</button>
-							
 						</td>
 					</tr>
 				</table>

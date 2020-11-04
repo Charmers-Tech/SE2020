@@ -43,7 +43,7 @@
 		    $image_temp = $_FILES['photo']['tmp_name'];
 		    move_uploaded_file($image_temp, '../images/'.$image_name);
 
-		    $description = clean_input($_POST['description']);
+		    $description = clean_input($_POST['descriptions']);
 		    $stock_balance = clean_input($_POST['stockBal']);
 		    $price = clean_input($_POST['price']);
 		    $warehouse_id = clean_input($_POST['warehouse']);
@@ -84,7 +84,10 @@
 			header("location:../already_alert.php");
 		}
 //// End insert new product ////		
-	}	
+	}else{
+		header('location:../index.php');
+	}
+
 
  ?>
 
