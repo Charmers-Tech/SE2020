@@ -116,7 +116,7 @@
 					</tr>
 					<tr>
 						<th >Price</th>
-						<th ><input type="number" name="price" min="1" class="form-control" required></th>
+						<th ><input type="number" step="any" name="price" min="1" class="form-control" required></th>
 					</tr>
 					<tr>
 						<th >Warehouse</th>

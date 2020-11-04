@@ -1,4 +1,15 @@
 <?php 
+
+	//include headers
+	//it allow all origins like localhost, any domain or any subdomain
+	header('Access-Control-Allow-Origin: *');
+	//data which we are getting inside request
+	header('Content-Type: application/json; charset: UTF-8');
+	//method type
+	header('Access-Control-Allow-Methods: POST');
+	//it allow header
+	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
+	
 	
 	define('HOST', '127.0.0.1');
 	define('DB_USER', 'root');

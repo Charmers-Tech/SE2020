@@ -93,19 +93,6 @@
         border: 1px solid #4CAF50;
         text-decoration: none;
         }
-        /*.wrapper{
-            width: 500px;
-            margin:30px 550px;
-        }
-
-        *{
-            font-family:arial;
-        }
-
-        .delete{
-            color:red;
-            font-weight:bold;
-        }*/
     </style>
 </head>
 <body>
@@ -139,6 +126,12 @@
         <!--crud table section-->
         <div class="row justify-content-center mt-4">
             <div class="col-md-12">
+                <?php 
+
+                    if(isset($_GET['return'])){
+                        echo decrypt_data($_GET['return']);
+                    }
+                 ?>
                 <table id="table" class="table table-striped table-bordered ">
                     <thead>
                         <tr>
@@ -159,43 +152,18 @@
                                 $flag = true;
                             }
                             if ($flag) {
+                                // to show search product
                                 include_once "actions/search.php" ;
                             }
                             else {
+                                // to retrieve all products
                                 include_once "actions/retrieve.php" ;
                             }
                         ?>
-        <!--delete alert box-->
-            <!-- <div id="delete" class="modal">
-                <div class="wrapper">
-                    <form action="#" method="post">
-                        <div class="alert alert-info fade in">
-                            <input type="hidden" name="id" value="1"/>
-                            <p class="delete">Are you sure you want to delete this record?</p><br>
-                            <p>
-                                <a href=""  class="btn btn-danger">Yes<a>
-                                <a href="index.php" class="btn btn-default">No</a>
-                            </p>
-                        </div>
-                    </form>             
-                </div>
-            </div> -->
-            <!--end of delete alert box section-->
     </section>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <script>
-        // Get the modal
-        // var modal = document.getElementById('delete');
-
-        // // When the user clicks anywhere outside of the modal, close it
-        // window.onclick = function(event) {
-        //     if (event.target == modal) {
-        //         modal.style.display = "none";
-        // }
-        // }
-    </script>
 </body>
 </html>

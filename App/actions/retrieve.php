@@ -61,7 +61,6 @@
 		     	$p_id 			=$result[$i]['id'];
 
  ?>
-
 	<tr>
 	    <td><?php echo "$id"; ?></td>
 	    <td><?php echo "$name"; ?></td>
