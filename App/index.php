@@ -93,6 +93,9 @@
         border: 1px solid #4CAF50;
         text-decoration: none;
         }
+        .alert_close{
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -129,7 +132,17 @@
                 <?php 
 
                     if(isset($_GET['return'])){
-                        echo decrypt_data($_GET['return']);
+                        $msg = decrypt_data($_GET['return']);
+                ?>
+                    <div class="alert alert-primary" role="alert">
+                        <strong><?php echo "$msg"; ?></strong>
+                        <button type="button" class="close" aria-label="Close">
+                        <span aria-hidden="true">
+                            <a href="index.php" class="alert_close">&times;</a>
+                        </span>
+                      </button>
+                    </div>
+                <?php
                     }
                  ?>
                 <table id="table" class="table table-striped table-bordered ">

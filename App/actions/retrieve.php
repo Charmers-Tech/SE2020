@@ -86,7 +86,17 @@
 <?php endfor; 
 		}
 	     else{
-	     	echo $decode["data"];
+?>
+	<div class="alert alert-primary" role="alert">
+        <strong><?php echo $decode["data"]; ?></strong>
+        <button type="button" class="close" aria-label="Close">
+	        <span aria-hidden="true">
+	            <a href="index.php" class="alert_close">&times;</a>
+	        </span>
+        </button>
+    </div>
+	     	
+<?php
 	     }
 	 }
 
