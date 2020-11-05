@@ -10,14 +10,21 @@
 	//it allow header
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 	
-	
-	define('HOST', '127.0.0.1');
-	define('DB_USER', 'root');
-	define('DB_PASS', '');
-	define('DB_NAME', 'productitem');
+	//Development Version from phpmyadmin
+	// define('HOST', '127.0.0.1');
+	// define('DB_USER', 'root');
+	// define('DB_PASS', '');
+	// define('DB_NAME', 'productitem');
 
+	//Remote DB Version from remotemysql.com
+	define('HOST', 'remotemysql.com');
+	define('DB_USER', 'GDlwT0oVKK');
+	define('DB_PASS', '4OtppFGbQg');
+	define('DB_NAME', 'GDlwT0oVKK');
+
+	//Database Configuration
 	$db = new PDO('mysql:host='.HOST.';dbname='.DB_NAME.';charset=utf8',DB_USER,DB_PASS);
-
+	//database connection checking
 	if(!isset($db))
 		die('Connection Fail');
 

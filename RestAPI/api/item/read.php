@@ -10,8 +10,7 @@
 	//it allow header
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 	
-	//initializing our API
-	//include_once('../../core/initialize.php');
+	//getting DB connection
 	include_once('../../includes/config.php');
 	
 	include_once('../../core/product.php');
@@ -21,7 +20,7 @@
 
 	if ($_SERVER['REQUEST_METHOD'] === "GET") {
 		
-		//blog product query
+		//get product query
 		$result = $product->get_all_data();
 
 		//get the row count

@@ -1,6 +1,7 @@
 <?php 
+///to get some functions ///
 	include_once "actions/function.php";
-
+///to get product detail data by ID ///
 	include_once "actions/detail.php";
 	 
 ?>
@@ -134,6 +135,7 @@
 						<th >Warehouse</th>
 						<td ><select class="form-control" name="warehouse" required >
 							<option value="">Choose...</option>
+							<!-- getting warehouse data from api and show in select box -->
 							<?php include_once "actions/wh_selected.php" ?>
 						</td>
 					</tr>
@@ -152,13 +154,6 @@
 			</div>
 		</form>
 	</div>
-	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-			$('.cancel').click(function(event) {
-				window.location.href ="/index.php";
-			});
-		});
-	</script>
 </body>
 </html>
         

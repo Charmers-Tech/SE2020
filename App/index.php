@@ -1,4 +1,7 @@
-<?php include_once "actions/function.php" ?>
+<?php 
+///to get some functions ///
+    include_once "actions/function.php" 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,7 +52,7 @@
         }
 
         .add{
-            width:130px;
+            width:150px;
             height:40px;
             background-color:#226089;
             color:#ffffff;
@@ -122,18 +125,19 @@
                 </div> 
             </div>
             <div class="col-md-7">
-                <a href="insert.php" class="btn add pull-right ">Add New Item</a>
+                <a href="insert.php" class="btn add pull-right ">Add New Product</a>
             </div>
         </div>
         
-        <!--crud table section-->
+        <!--show table section-->
         <div class="row justify-content-center mt-4">
             <div class="col-md-12">
                 <?php 
-
+                    /// getting some feedback from API
                     if(isset($_GET['return'])){
                         $msg = decrypt_data($_GET['return']);
                 ?>
+                <!-- to show alert some feedback form API -->
                     <div class="alert alert-primary" role="alert">
                         <strong><?php echo "$msg"; ?></strong>
                         <button type="button" class="close" aria-label="Close">
@@ -143,7 +147,7 @@
                       </button>
                     </div>
                 <?php
-                    }
+                    }//end getting some feedback from API //
                  ?>
                 <table id="table" class="table table-striped table-bordered ">
                     <thead>
@@ -159,7 +163,8 @@
                     </thead>
                     <tbody>
 
-                        <?php 
+                        <?php
+                        // to show view table 
                             $flag = false;
                             if (isset($_POST['submit'])) {
                                 $flag = true;

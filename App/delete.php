@@ -1,6 +1,7 @@
 <?php 
+///to get some functions ///
     include_once "actions/function.php";
-
+// getting Product ID by get request from index page and Decrypt the ID
     if(isset($_GET['id'])){
         $enc_id = clean_input($_GET['id']);
         $id = decrypt_data($enc_id);
@@ -40,12 +41,12 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="page-header">
-                            <h1>Delete Record</h1>
+                            <h1>Delete Product</h1>
                         </div>
                         <form action="actions/delete.php" method="post">
                             <div class="alert alert-danger fade in">
                                 <input type="hidden" name="id" value="<?php echo $id ?>"/>
-                                <p class="delete">Are you sure you want to delete this record?</p><br>
+                                <p class="delete">Are you sure you want to delete this product?</p><br>
                                 <p>
                                     <input type="submit" value="Yes" name="yes" class="btn btn-danger">
                                     <a href="index.php" class="btn btn-default">No</a>

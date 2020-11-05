@@ -8,8 +8,7 @@
 	//method type
 	header('Access-Control-Allow-Methods: GET');
 	
-	//initializing our API
-	//include_once('../../core/initialize.php');
+	//getting DB connection
 	include_once('../../includes/config.php');
 	
 	include_once('../../core/warehouse.php');
@@ -18,7 +17,7 @@
 	$warehouse = new Warehouse($db);
 
 	if ($_SERVER['REQUEST_METHOD'] === "GET") {
-		
+		//getting warehouse data
 		$result = $warehouse->get_all_data();
 
 		//get the row count
@@ -31,8 +30,8 @@
 			while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
 				extract($row);
 				$warehouse_item = array(
-					'id'   			=> $id,
-					'name' 			=> $name	
+					'id'   	=> $id,
+					'name' 	=> $name	
 				);
 
 				array_push($warehouse_arr['data'], $warehouse_item);

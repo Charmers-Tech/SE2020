@@ -10,9 +10,7 @@
 	//it allow header
 	header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods,Authorization,X-Requested-With');
 	
-	//initializing our API
-	//include_once('../../core/initialize.php');
-	
+	//getting DB connection
 	include_once('../../includes/config.php');
 	
 	include_once('../../core/product.php');
@@ -29,7 +27,6 @@
 			!empty($data->warehouse_id) &&
 			!empty($data->name) &&
 			!empty($data->photo) &&
-			!empty($data->stock_balance) &&
 			!empty($data->price) &&
 			!empty($data->description))
 		{
@@ -64,7 +61,7 @@
 			http_response_code(404); // Page not found
 			echo json_encode(array(
 				"status"  => 0,
-				"message" => "All values neededs"
+				"message" => "All values needed"
 			));
 		}	
 	}

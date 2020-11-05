@@ -1,25 +1,35 @@
- <?php 
+<!-- To give warehouse name in the warehouse select box of insert form UI -->
+<?php 
+	//to get scheme from server domain such as http or https
+	$scheme = $_SERVER['REQUEST_SCHEME'];
 
-		$scheme = $_SERVER['REQUEST_SCHEME'];
-		$host = $_SERVER['HTTP_HOST'];
-		$url = $scheme.'://'.$host.'/SE2020/RestAPI/api/warehouse/read.php';
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-		curl_setopt($ch, CURLOPT_URL, $url);
-		$products = curl_exec($ch);
-		curl_close($ch);
-		if (empty($products)){
-			print "Nothing returned from API.<br>";
-		}
-		else{
-			$decode = json_decode($products, true);
-			if($decode["status"] == 1){
-				$result = $decode["data"];
-			for ($i=0; $i < count($result); $i++):
-				$id 	= $result[$i]['id'];
-				$name 	= $result[$i]['name'];
+	//to get hosting name from server domain such as localhost
+	$host = $_SERVER['HTTP_HOST'];
+
+	//generating API url to connect
+	$url = $scheme.'://'.$host.'/SE2020/RestAPI/api/warehouse/read.php';
+
+	//using curl ->  command-line tool for sending HTTP requests from the terminal
+	//Initializes a new curl session and setting up necessary for GET request
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	curl_setopt($ch, CURLOPT_URL, $url);
+	// Execute cURL request and getting a response with JSON format
+	$products = curl_exec($ch);
+	curl_close($ch);
+	if (empty($products)){
+		print "Nothing returned from API.<br>";
+	}
+	else{
+		//decoding the JSON format to get the data as an array
+		$decode = json_decode($products, true);
+		if($decode["status"] == 1){
+			$result = $decode["data"];
+		for ($i=0; $i < count($result); $i++):
+			$id 	= $result[$i]['id'];
+			$name 	= $result[$i]['name'];
 ?>
-		<option value="<?php echo $id ?>"><?php echo $name ?></option>
+			<option value="<?php echo $id ?>"><?php echo $name ?></option>
 <?php	
 		endfor;
 ?>

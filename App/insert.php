@@ -127,7 +127,7 @@
 					</tr>
 					<tr>
 						<th >Stock Balance</th>
-						<td ><input type="number" name="stockBal" min="0" max="99999" class="form-control" required></td>
+						<td ><input type="number" name="stockBal" min="1" max="99999" class="form-control" required></td>
 					</tr>
 					<tr>
 						<th >Price</th>

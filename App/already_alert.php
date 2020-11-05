@@ -1,3 +1,4 @@
+<!-- If the product name exists in the table, inserting operation does not work. So to show user with alert -->
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -37,7 +38,6 @@
                         </div>
                         <form action="actions/delete.php" method="post">
                             <div class="alert alert-warning fade in">
-                                <input type="hidden" name="id" value="<?php echo $id ?>"/>
                                 <p class="delete">You cannot add the product. Your product name already exist in the table.</p><br>
                                 <p>
                                     <a href="index.php" class="btn btn-info">OK</a>

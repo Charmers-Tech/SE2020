@@ -1,13 +1,13 @@
 <?php 
+///to get some functions ///
 	include_once "actions/function.php";
-
-	include_once "actions/detail.php";
-	 
+///to get product detail data ///
+	include_once "actions/detail.php";	 
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>View Detail</title>
+	<title>Product Item Module - View Detail</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
 	<style type="text/css">
 

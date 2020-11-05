@@ -1,5 +1,5 @@
 <?php 
-
+// check and clean some illegal text and white space for preventing injection
 	function clean_input($input){
 
 		$input = trim($input);
