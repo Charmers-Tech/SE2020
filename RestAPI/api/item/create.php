@@ -27,7 +27,6 @@
 			!empty($data->warehouse_id) &&
 			!empty($data->name) &&
 			!empty($data->photo) &&
-			!empty($data->stock_balance) &&
 			!empty($data->price) &&
 			!empty($data->description))
 		{
