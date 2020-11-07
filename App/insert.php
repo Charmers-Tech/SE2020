@@ -1,4 +1,6 @@
 <?php 
+	session_start();
+
 	include_once "actions/function.php";
 
 	$invalid_file ="";
@@ -6,7 +8,8 @@
 		$invalid_file = "Image must be *.jpg, *.png, *.jpeg, *.gif,";;
 		   
 	}
-			
+	$token = md5(uniqid(rand(), true));
+    $_SESSION['csrf'] = $token;	
 
  ?>
 <!DOCTYPE html>
@@ -124,6 +127,7 @@
 <div id="wrap">
 		<form method="post" action="actions/create.php" enctype="multipart/form-data">
 			<h1>Add Product</h1>
+			<input type="hidden" name="csrf" value="<?php echo $token; ?>">
 			<div class ="form">
 				<table>
 					<tr>

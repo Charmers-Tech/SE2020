@@ -8,6 +8,7 @@
 
 	//get product name from search box
 	$name = clean_input($_POST['search']);
+
 	//to get begin with name and receive the product name as an array
 	$form_data = array("name" => $name.'%');
 

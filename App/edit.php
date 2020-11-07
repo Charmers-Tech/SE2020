@@ -1,12 +1,14 @@
 <?php 
+	session_start();
 ///to get some functions ///
 	include_once "actions/function.php";
 
+//image validation	
 	$invalid_file ="";
 	if (isset($_GET['invalid_msg'])) {
 		$invalid_file = "Image must be *.jpg, *.png, *.jpeg, *.gif,";
 
-	//getting encrypt ID from get request and decrypt the ID
+		//getting encrypt ID from get request and decrypt the ID
 		$id = decrypt_data(clean_input($_GET['invalid_msg']));
 
 		//to get scheme from server domain such as http or https
@@ -50,13 +52,14 @@
 			     	echo $decode["data"];
 			     }
 			 }
-			   
+//end image validation				   
 	}else{
 
 		///to get product detail data by ID ///
 		include_once "actions/detail.php";
 	}
-	
+	$token1 = md5(uniqid(rand(), true));
+    $_SESSION['csrf1'] = $token1;
 	 
 ?>
 <!DOCTYPE html>
@@ -162,6 +165,7 @@
 		<form method="post" action="actions/update.php" enctype="multipart/form-data">
 			<h1>Edit Product</h1>
 			<input type="hidden" name="id" value="<?php echo $id ?>">
+			<input type="hidden" name="csrf1" value="<?php echo $token1; ?>">
 			<div class ="form">
 				<table>
 					<tr>
