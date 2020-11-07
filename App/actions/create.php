@@ -48,11 +48,18 @@
 ///// insert new product ////
 		if ($num_of_results == 0) {
 
-			$id = uniqid('id', true);
 			$image_name = basename($_FILES['photo']['name']);
 		    $image_temp = $_FILES['photo']['tmp_name'];
+
+		    $allowed =  array('jpeg','jpg', "png", "gif", "JPEG","JPG", "PNG", "GIF");
+			$ext = pathinfo($image_name, PATHINFO_EXTENSION);
+			if(!in_array($ext,$allowed) ) {
+				header("location:../insert.php?msg=1");
+				die();
+			}
 		    move_uploaded_file($image_temp, '../images/'.$image_name);
 
+		    $id = uniqid('id', true);
 		    $description = clean_input($_POST['descriptions']);
 		    $stock_balance = clean_input($_POST['stockBal']);
 		    $price = clean_input($_POST['price']);

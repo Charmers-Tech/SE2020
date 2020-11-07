@@ -117,7 +117,7 @@
             <div class="col-md-5">
                 <div class="input-group">
                     <form class="search" method="post" action="index.php">
-                        <input type="text" name="search" id="search" class="form-control" placeholder="Search...">
+                        <input type="text" name="search" id="search" class="form-control" placeholder="Search by Name ...">
                         <span class="input-group-btn">
                             <button type="submit" id="submit" class="btn" name="submit"><i class="fa fa-search"></i></button> 
                         </span>                      

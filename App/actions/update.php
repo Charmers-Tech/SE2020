@@ -13,6 +13,7 @@
 	if(isset($_POST['update'])){
 
 		$id = clean_input($_POST['id']);
+		$enc_id = encrypt_data($id);
 		$name = clean_input($_POST['name']); 
 
 		$image_name = basename($_FILES['photo']['name']);
@@ -21,6 +22,13 @@
 		// checking update image file exist or not exist
 		if (empty($image_name) || $image_name == '') {
 			$image_name = clean_input($_POST['org_photo']);
+		}
+
+		$allowed =  array('jpeg','jpg', "png", "gif", "JPEG","JPG", "PNG", "GIF");
+		$ext = pathinfo($image_name, PATHINFO_EXTENSION);
+		if(!in_array($ext,$allowed) ) {
+			header("location:../edit.php?invalid_msg=$enc_id");
+			die();
 		}
 		//sending image to the file system folder (images)
 		move_uploaded_file($image_temp, '../images/'.$image_name);

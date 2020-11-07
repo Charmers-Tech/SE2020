@@ -91,7 +91,7 @@
 
 	        <a href="edit.php?id=<?php echo encrypt_data($p_id) ?>"><span class='glyphicon glyphicon-pencil mr-4'></span></a>
 
-            <a href="delete.php?id=<?php echo encrypt_data($p_id) ?>" onclick="document.getElementById('delete').style.display='block'"><span class='glyphicon glyphicon-trash'></span></a>
+            <a href="delete.php?id=<?php echo encrypt_data($p_id) ?>&name=<?php echo "$name"; ?>"><span class='glyphicon glyphicon-trash'></span></a>
 
 	    </td>
 	</tr>

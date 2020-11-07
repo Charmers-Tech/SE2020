@@ -1,3 +1,14 @@
+<?php 
+	include_once "actions/function.php";
+
+	$invalid_file ="";
+	if (isset($_GET['msg'])) {
+		$invalid_file = "Image must be *.jpg, *.png, *.jpeg, *.gif,";;
+		   
+	}
+			
+
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,6 +111,10 @@
   			display: block;
   			text-align: center;
   		}
+  		.invalid{
+  			font-size: 12px;
+  			color: red;
+  		}
 
 
  	</style>
@@ -118,7 +133,9 @@
 					<tr>
                         <th><label class="control-label" for="photo">Product Photo</label></th>
 						<td>
+						<span class="invalid"><?php echo $invalid_file; ?></span>
                         <input type="file" name="photo" accept="image/x-png,image/jpeg" id="photo" required>
+                       
 						</td>
 					</tr>
 					<tr>

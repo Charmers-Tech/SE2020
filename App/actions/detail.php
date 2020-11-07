@@ -4,7 +4,7 @@
 if (isset($_GET['id'])) {
 
 	//getting encrypt ID from get request and decrypt the ID
-	$id = decrypt_data(clean_input($_GET['id']));
+	 $id = decrypt_data(clean_input($_GET['id']));
 
 	//to get scheme from server domain such as http or https
 	$scheme = $_SERVER['REQUEST_SCHEME'];
